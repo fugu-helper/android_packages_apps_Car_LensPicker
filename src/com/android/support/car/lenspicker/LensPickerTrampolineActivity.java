@@ -37,6 +37,8 @@ import java.net.URISyntaxException;
 public class LensPickerTrampolineActivity extends Activity {
     private static final String TAG = "LensPickerTrampoline";
 
+    private static final int DEFAULT_ACTIVITY_REQUEST_CODE = 1;
+
     /**
      * A lock to be used when retrieving the {@link IStaturBarService}.
      */
@@ -140,7 +142,7 @@ public class LensPickerTrampolineActivity extends Activity {
         Intent intent = new Intent();
         intent.setComponent(defaultComponent);
 
-        startActivity(intent);
+        startActivityForResult(intent, DEFAULT_ACTIVITY_REQUEST_CODE);
     }
 
     /**
